@@ -61,5 +61,16 @@ public class ArsList <T> {
 
     }
 
-
+    @Override
+    public String toString() {
+        String result="[";
+        for (int i = 0; i < size ; i++) {
+            result += arr[i];
+            if (i != (size-1)) {
+                result+=",";
+            }
+        }
+       result += "]";
+        return result;
+    }
 }
