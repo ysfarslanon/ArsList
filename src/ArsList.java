@@ -40,9 +40,12 @@ public class ArsList <T> {
             return null;
         }else{
             T deleted=arr[index];
+            System.arraycopy(arr, index + 1, arr, index, size - index);
+            /*
             for (int i = index; i <size ; i++) {
                 arr[i]=arr[i+1];
             }
+            */
             size--;
             return deleted;
         }
