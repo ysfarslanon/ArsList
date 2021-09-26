@@ -36,7 +36,7 @@ public class ArsList <T> {
     }
 
     public T remove(int index)  {
-        if (index < 0 && index > size) {
+        if (index < 0 || index > size) {
             return null;
         }else{
             T deleted=arr[index];
@@ -45,6 +45,15 @@ public class ArsList <T> {
             }
             size--;
             return deleted;
+        }
+
+    }
+    public T set(int index , T data){
+        if (index < 0 || index > size) {
+            return null;
+        }else{
+            arr[index] = data;
+            return data;
         }
 
     }
