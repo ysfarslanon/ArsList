@@ -92,4 +92,11 @@ public class ArsList <T> {
         return -1;
     }
 
+    public boolean isEmpty(){
+        if (size > 0) {
+            return false;
+        }
+        return true;
+    }
+
 }
