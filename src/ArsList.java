@@ -65,9 +65,12 @@ public class ArsList <T> {
     public String toString() {
         String result="[";
         for (int i = 0; i < size ; i++) {
-            result += arr[i];
-            if (i != (size-1)) {
-                result+=",";
+
+            if (arr[i] != null) {
+                result += arr[i];
+                if (i != (size-1)) {
+                    result+=",";
+                }
             }
         }
        result += "]";
@@ -105,6 +108,10 @@ public class ArsList <T> {
             newArr[i] = arr[i];
         }
         return newArr;
+    }
+
+    public void clear(){
+        Arrays.fill(arr,null);
     }
 
 }
