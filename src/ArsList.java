@@ -99,4 +99,12 @@ public class ArsList <T> {
         return true;
     }
 
+    public T[] toArray(){
+        T[] newArr = (T[]) new Object[size];
+        for (int i = 0; i < size; i++) {
+            newArr[i] = arr[i];
+        }
+        return newArr;
+    }
+
 }
