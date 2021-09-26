@@ -3,15 +3,15 @@ import java.util.Arrays;
 public class ArsList <T> {
     private static final int CAPACITY=10;
     private static int size;
-    private Object[] arr;
+    private T[] arr;
 
     public ArsList() {
-        arr=new Object[CAPACITY];
+        arr=(T[]) new Object[CAPACITY];
         size=0;
     }
 
     public ArsList(int capacity) {
-        arr=new Object[capacity];
+        arr= (T[]) new Object[capacity];
         size=0;
     }
 
@@ -35,7 +35,19 @@ public class ArsList <T> {
          return arr[index]==null ? null : (T)arr[index];
     }
 
+    public T remove(int index)  {
+        if (index < 0 && index > size) {
+            return null;
+        }else{
+            T deleted=arr[index];
+            for (int i = index; i <size ; i++) {
+                arr[i]=arr[i+1];
+            }
+            size--;
+            return deleted;
+        }
 
+    }
 
 
 }
