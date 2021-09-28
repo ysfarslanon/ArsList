@@ -111,7 +111,22 @@ public class ArsList <T> {
     }
 
     public void clear(){
-        Arrays.fill(arr,null);
+        for (int i = 0; i < size; i++) {
+            arr[i]=null;
+        }
+        size=0;
     }
+
+    public ArsList<T> sublist(int start, int finish){
+        //start including, finish not included
+        ArsList<T> newSubList = new ArsList<>(finish - start);
+        if(start < 0 || finish > getCapacity() || finish < 0 || finish < start){
+            return null;
+        }
+        for (int i = start; i < finish; i++) {
+            newSubList.add(arr[i]);
+        }
+        return newSubList;
+     }
 
 }
