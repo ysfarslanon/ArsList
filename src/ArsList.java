@@ -129,4 +129,12 @@ public class ArsList <T> {
         return newSubList;
      }
 
+     public boolean contains(T data){
+         for (int i = 0; i < size; i++) {
+             if (arr[i] == data)
+                 return true;
+         }
+        return false;
+     }
+
 }
